@@ -4,6 +4,57 @@
     box-sizing: border-box; /* 디자인을 시작하기 위한 초기 설정 (중요) */
 }
 
-h1 {
-    background-color: brown;
+a, a:link, a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}                  /* 기본적으로 존재하는 점이나 밑줄 등을 전부 제거함 */
+
+/* 상단 내용은 초기화 용도*/
+
+.container{
+    width: 1140px;
+    margin: 0 auto;
+}
+
+header {
+    position: absolute;
+    color: black;
+    top: 0px;
+    z-index: 1; /* 영역의 표시 우선도 */
+    width: 100%; /* 비율 좌표로 사용 */
+    padding: 1rem; /* rem #해상도가 다른 디스플레이끼리 좌표가 동일하도록 환산하는 단위 */
+}
+
+header .container{   /* 복합 선택자 #특정 태그안의 클래스 지정 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+header nav ul{
+    display: flex;
+}
+
+header nav ul li{
+    padding: 10px;
+}
+
+header button {
+    background:transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+header h1 button{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+header nav ul li button{
+    font-size:1.2rem;
 }
