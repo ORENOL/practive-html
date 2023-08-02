@@ -1,0 +1,9 @@
+*{
+    margin: 0;  /* 마진과 패딩 영역을 디폴트값으로 설정 */
+    padding: 0;
+    box-sizing: border-box; /* 디자인을 시작하기 위한 초기 설정 (중요) */
+}
+
+h1 {
+    background-color: brown;
+}
