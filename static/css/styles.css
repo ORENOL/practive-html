@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Varela+Round&display=swap');
+/* 폰트 불러오기 */
+
 *{
     margin: 0;  /* 마진과 패딩 영역을 디폴트값으로 설정 */
     padding: 0;
@@ -17,17 +20,17 @@ li {
 
 .container{
     width: 1140px;
-    margin: 0 auto;
-}
+    margin: 0 auto; /* 0 auto는 상하공간을 0, 좌우공간을 auto로 마진을 잡는 것*/
+} /*  */
 
 header {
-    position: absolute;
-    color: black;
+    position: fixed;
+    color: white;
     top: 0px;
     z-index: 1; /* 영역의 표시 우선도 */
     width: 100%; /* 비율 좌표로 사용 */
     padding: 1rem; /* rem #해상도가 다른 디스플레이끼리 좌표가 동일하도록 환산하는 단위 */
-}
+}  /* 디자인 시안에서 수치를 어떻게 해야하는지 제시됨  */
 
 header .container{   /* 복합 선택자 #특정 태그안의 클래스 지정 */
     display: flex;
@@ -37,7 +40,7 @@ header .container{   /* 복합 선택자 #특정 태그안의 클래스 지정 *
 }
 
 header nav ul{
-    display: flex;
+    display: flex;  /* flex를 사용하여 수직으로 쌓인 박스를 수평으로 배치함 */
 }
 
 header nav ul li{
@@ -57,4 +60,87 @@ header h1 button{
 
 header nav ul li button{
     font-size:1.2rem;
+    color: white;
 }
+
+main{
+    width: 100%;
+    height: 100vh; /* 영역을 화면 전체로 넓히기 위함 / %로 표시하면 텍스트 크기만큼만 차지 */
+    color: white;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8)), url('../images/me.jpg') center center;
+    /* 다른 컴퓨터와의 호환성을 위해 상대좌표로 표기함 .. */
+    background-size:cover;
+    display: flex; /* (중요) main영역을 flex시키면 자식인 <div>를 통으로 flex시킨것.
+                             header영역의 경우 자식인 <div>를 flex시켰으므로 그 내용이 flex됨 
+                             <div>에 들어갈 영향을 잘 고려해서 flex를 적용시킬 것*/
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}   
+
+main h4{
+    font-size: 2rem;
+}
+
+main h2{
+    font-size: 3.5rem;
+    margin: 2rem 0;
+    letter-spacing: 3px;
+    font-family:"Varela Round", sans-serif;
+}
+
+main p{
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1.25rem;
+}
+
+main button.download {
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    margin-top: 3rem;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }  /* 버튼을 둥근 사각형으로 만드는 코드 */
+  main button.mouse {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: upDown 1s ease-in-out infinite;
+    cursor: pointer;
+  }
+  @keyframes upDown {
+    0% {
+      bottom: 1rem;
+    }
+    50% {
+      bottom: 1.5rem;
+    }
+    100% {
+      bottom: 1rem;
+    }
+  }
+  main h2 span::after { /* ::after #가장선택자 */
+    content: "";
+    height: 40px;
+    width: 3px;
+    background-color: #fff;
+    display: inline-block;
+    animation: blink 0.7s ease-in-out infinite;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
