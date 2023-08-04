@@ -13,13 +13,13 @@
 ##TODO
 
 - [x] 헤더
-- [ ] 메인
+- [x] 메인
 - [ ] 섹션
-    - [ ] About Me
+    - [x] About Me (2개 균등 분할 연습, float 사용)
     - [ ] What I Do
     - [ ] Background
     - [ ] Portfolio
-    - [ ] Contact With Me
+    - [x] Contact With Me
 
 ## Ref.
 - [.gitignore](https://www.toptal.com/developers/gitignore)

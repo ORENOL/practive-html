@@ -144,3 +144,165 @@ main button.download {
       opacity: 0;
     }
   }
+
+ /* 섹션 */
+ section {
+    font-family: "poppins", sans-serif;
+    padding: 5rem 0;
+ }
+
+ section:nth-child(2n) { /* 2n #짝수를 의미 */
+    background-color: #f8f8f8;
+ }
+
+ section .title {
+    margin-bottom: 3rem;
+  }
+  section .title h4 {
+    font-size: 1.35rem;
+    color: #ed4848;
+    position: relative; /*float 분리를 위한 기준 포지션 설정*/
+  }
+  section .title h2 {
+    font-size: 3.5rem;
+  }
+  section .title p {
+    font-size: 1.15rem;
+  }
+
+/* float 속성 해제 #float는 개체를 분리시켜 배치시킴. 다만 위치고정이 안되므로 아래 설정이 필요.*/
+section .about-self::after { /* 화면이 로딩되면 설정 초기화 */
+    content: "";
+    clear: both; /* float 설정 초기화 */
+    display: block; /* 단위면적대로 움직임 */
+  }
+
+/* 본문 너비 절반 지정 & 왼쪽 배치 */
+section .about-self .left { 
+    width: 50%;
+    float: left;
+  }
+  /* 이미지 크기가 부모 영역을 넘지 않도록 부모 영역의 최대 크기로 지정 */
+  section .about-self .left img {
+    max-width: 100%;
+  }
+  /* 본문 너비 절반 지정 & 오른쪽 배치 */
+  section .about-self .right {
+    width: 50%;
+    float: left;
+    padding: 0 2rem;
+  }
+  /* 본문 오른쪽 h3 태그의 글자 크기와 여백 지정 */
+  section .about-self .right h3 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+  }
+  /* 본문 오른쪽 h3 태그의 strong 태그 색상 강조 */
+section .about-self .right h3 strong {
+    color: #ed4848;
+  }
+  /* 본문 오른쪽 p 태그의 크기와 여백 지정 */
+  section .about-self .right p {
+    font-size: 1.15rem;
+    margin: 1rem 0;
+  }
+  /* 본문 오른쪽의 아이콘 폰트 크기와 여백 지정 */
+  section .about-self .right .social a {
+    font-size: 2.5rem;
+    margin-right: 0.2rem;
+  }
+
+  /* @media 미디어쿼리를 사용하여 스크린 크기에 맞게 콘텐츠 크기를 조절
+     이것으로 대부분의 단말기에 맞게 조정가능 (중요)
+     관리자 도구에는 나타나지않음 */
+
+
+  /* float와 relative를 안쓰기 위해서   display:flex 플렉스박스 혹은 display:grid 그리드 사용 */
+
+  section.contact .contact-me::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+section.contact .contact-me .left {
+  width: 30%;
+  float: left;
+}
+section.contact .contact-me .right {
+  float: left;
+  width: 65%;
+  margin-left: 5%;
+}
+section.contact .contact-me .left .card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+section.contact .contact-me .left .card .icon i {
+  font-size: 2rem;
+  margin-right: 15px;
+}
+section.contact .contact-me .right {
+  float: left;
+  width: 65%;
+  margin-left: 5%;
+  margin-bottom: 2rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
+}
+/* form-group 사이 간격 지정 */
+section.contact .contact-me .right .form-group {
+  margin-bottom: 1.25rem;
+}
+/* label 태그가 인라인 성격이어서 외부 여백을 적용하기 위해 block으로 변경 */
+section.contact .contact-me .right .form-group label {
+  display: block;
+  margin-bottom: 0.85rem;
+}
+/* input 요소 꾸미기 */
+section.contact .contact-me .right .form-group input {
+  padding: 0.625rem;
+  width: 100%;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+/* :focus 가상 클래스 선택자로 입력 요소에 커서가 활성화되면 파란색 테두리와 그림자 효과 추가 */
+section.contact .contact-me .right .form-group input:focus {
+  border: 1px solid #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+/* textarea 요소 꾸미기 */
+section.contact .contact-me .right .form-group textarea {
+  height: 300px;
+  width: 100%;
+  resize: none;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+/* textarea 요소에 커서 활성화가 되면 파란색 테두리와 그림자 효과 추가 */
+section.contact .contact-me .right .form-group textarea:focus {
+  outline: none;
+  border: 1px solid #719ece;
+  box-shadow: 0 0 10px #719ece;
+}
+/* 버튼 요소 꾸미기 */
+section.contact .contact-me .right button {
+  width: 100%;
+  padding: 1rem;
+  background-color: #f78b00;
+  border: none;
+  color: white;
+}
+
+  /* Contact With Me 영역 */
+  section.contact .contact-me .left {
+    width: 100%; /* 너비 변경 30% -> 100% */
+  }
+
+  section.contact .contact-me .right {
+    width: 100%; /* 너비 변경 65% -> 100% */
+    margin-left: 0; /* margin 초기화 */
+  }
